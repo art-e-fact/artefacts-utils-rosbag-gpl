@@ -102,7 +102,7 @@ class RosVideoWriter(Node):
             print_help()
             sys.exit(1)
         try:
-            opt_files = self.parse_args(args[1:])
+            opt_files = self.parse_args(args)
             print('FPS (int) = ', self.fps)
             print('Rate (float) = ', self.rate)
             print('Topic (str) = ', self.opt_topic)
@@ -336,21 +336,26 @@ class RosVideoWriter(Node):
         else:
             self.frame_no = self.frame_no + 1
 
+def ros2bag2video(rosbag_filepath, topic_name, output_filepath, fps=20):
+    args = [
+        "--topic",
+        topic_name,
+        "--fps",
+        str(fps),
+        "--rate",
+        "1.0",
+        "-o",
+        output_filepath,
+        rosbag_filepath,
+    ]
 
-def main(args=None):
-    '''
-    The main function.
-    Starts ros2bag2videos ROS2 node and spins it.
-    '''
+    # create output directory if it does not exist
+    output_dir = os.path.dirname(output_filepath)
+    if output_dir and not os.path.exists(output_dir):
+        os.makedirs(output_dir)
+
     rclpy.init(args=args)
-
     videowriter = RosVideoWriter(args)
-
     rclpy.spin(videowriter)
-
     videowriter.destroy_node()
     rclpy.shutdown()
-
-
-if __name__ == '__main__':
-    main(sys.argv)

@@ -130,3 +130,6 @@ dmypy.json
 
 artefacts_utils_rosbag_gpl/version.py
 .vscode/
+rosbag*
+output/
+example.py
