@@ -17,7 +17,7 @@ classifiers = [
 ]
 dependencies = [
     "opencv-python",
-    "numpy==1.26.4",
+    "numpy >= 1.26.0, < 2",
 ]
 dynamic = ["version"]
 
