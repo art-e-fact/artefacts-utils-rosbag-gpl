@@ -356,6 +356,15 @@ def rosbag_to_mp4(rosbag_filepath, topic_name, output_filepath, fps=20):
 
     rclpy.init(args=args)
     videowriter = RosVideoWriter(args)
-    rclpy.spin(videowriter)
-    videowriter.destroy_node()
-    rclpy.shutdown()
+    try:
+        rclpy.spin(videowriter)
+    except KeyboardInterrupt:
+        print("Video creation interrupted")
+    except Exception as e:
+        print(f"Error creating Video: {e}")
+    except SystemExit:
+        print("Video creation complete. Shutting down...")
+    finally:
+        videowriter.destroy_node()
+        rclpy.shutdown()
+        print("Video writer node destroyed and shutdown complete")
