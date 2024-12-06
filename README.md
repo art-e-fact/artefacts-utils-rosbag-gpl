@@ -1,11 +1,11 @@
-# Artefacts-Utils Rosbag GPL package
+# Artefacts Toolkit Rosbag GPL package
 
-Designed to be used with `artefacts-utils` this package contains code available under the GPL license.
+Designed to be used with `artefacts-toolkit` this package contains code available under the GPL license.
 
 ## Standalone Usage
 
 ```
-from artefacts_utils_rosbag_gpl.ros2bag2video import rosbag_to_mp4
+from artefacts_toolkit_rosbag_gpl.ros2bag2video import rosbag_to_mp4
 
 rosbag_to_mp4(rosbag_filepath, topic_name, output_filepath, fps=20)
 ```

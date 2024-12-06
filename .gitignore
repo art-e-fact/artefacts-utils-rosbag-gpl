@@ -128,7 +128,7 @@ dmypy.json
 # Pyre type checker
 .pyre/
 
-artefacts_utils_rosbag_gpl/version.py
+artefacts_toolkit_rosbag_gpl/version.py
 .vscode/
 rosbag*
 output/
