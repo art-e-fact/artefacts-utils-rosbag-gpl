@@ -336,7 +336,7 @@ class RosVideoWriter(Node):
         else:
             self.frame_no = self.frame_no + 1
 
-def rosbag_to_mp4(rosbag_filepath, topic_name, output_filepath, fps=20):
+def extract_video(rosbag_filepath, topic_name, output_filepath, fps=20):
     args = [
         "--topic",
         topic_name,
