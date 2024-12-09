@@ -3,9 +3,12 @@ requires = ["setuptools>=64.0", "setuptools-scm>=8"]
 build-backend = "setuptools.build_meta"
 
 [project]
-name = "artefacts_utils_rosbag_gpl"
+name = "artefacts_toolkit_rosbag_gpl"
 authors = [
+  { name="FD", email="fabian@artefacts.com" },
+  { name="AGC", email="alejandro@artefacts.com" },
   { name="TN", email="tomo@artefacts.com" },
+  { name="EP", email="eric@artefacts.com" },
 ]
 description = ""
 readme = "README.md"
@@ -22,11 +25,11 @@ dependencies = [
 dynamic = ["version"]
 
 [tool.setuptools]
-packages = ["artefacts_utils_rosbag_gpl"]
+packages = ["artefacts_toolkit_rosbag_gpl"]
 include-package-data = false
 
 [tool.setuptools_scm]
-version_file = "artefacts_utils_rosbag_gpl/version.py"
+version_file = "artefacts_toolkit_rosbag_gpl/version.py"
 
 [project.optional-dependencies]
 dev = [
@@ -42,5 +45,5 @@ dev = [
 ]
 
 [project.urls]
-"Homepage" = "https://github.com/art-e-fact/artefacts_utils_rosbag_gpl"
-"Bug Tracker" = "https://github.com/art-e-fact/artefacts_utils_rosbag_gpl/issues"
+"Homepage" = "https://github.com/art-e-fact/artefacts-toolkit-rosbag_gpl"
+"Bug Tracker" = "https://github.com/art-e-fact/artefacts-toolkit-rosbag_gpl/issues"

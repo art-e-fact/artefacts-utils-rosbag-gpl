@@ -22,7 +22,7 @@ python -m build
 
 if [[ "$production" = "production" ]]
 then
-  twine upload dist/artefacts_utils_rosbag_gpl-${new_version}-py3-none-any.whl
+  twine upload dist/artefacts_toolkit_rosbag_gpl-${new_version}-py3-none-any.whl
 else
-  twine upload -r testpypi dist/artefacts_utils_rosbag_gpl-${new_version}-py3-none-any.whl
+  twine upload -r testpypi dist/artefacts_toolkit_rosbag_gpl-${new_version}-py3-none-any.whl
 fi
